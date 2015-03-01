@@ -1,0 +1,18 @@
+<!-- The users page. Example of template inheritance -->
+
+<!-- We extend the template described in layout. Now, we just need to fill 
+  in the blocks that layout is looking for -->
+{% extends "layout.html" %}
+
+{% block title %} Users {% endblock %}
+
+{% block content %}
+  <!-- Print the name variable, passed in to render_template in app -->
+  <p>Hello {{ name }}!</p>
+  <ul>
+  <!-- Loop through each user in the users list, and print it -->
+  {% for user in users %}
+    <li>{{user}}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

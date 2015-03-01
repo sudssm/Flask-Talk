@@ -1,0 +1,21 @@
+<!-- A login page -->
+<html>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <!-- This is Jinja2 syntax. We check if the error variable is defined -->
+    {% if error %}
+      <!-- and if so, print it -->
+      <p style='color:red'>{{ error }}</p>
+    {% endif %}
+
+    <!-- the form. We want it to send POST requests to the /login route -->
+    <form action='/login' method='post'>
+      Name: <input name='user'>
+      Password: <input type='password' name='password'>
+      <input type='submit'>
+    </form>
+  </body>
+</html>
